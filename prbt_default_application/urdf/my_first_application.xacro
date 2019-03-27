@@ -51,7 +51,7 @@
     <child link="pnoz"/>
   </joint>
 
-  <!-- connect the added tcp and the flange with a joint (tutorial 2)-->
+  <!-- connect the added tcp and the flange with a joint -->
   <joint name="prbt_fixed_joint_tcp" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.05"/>
     <parent link="prbt_flange"/>

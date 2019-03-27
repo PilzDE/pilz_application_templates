@@ -1,22 +1,17 @@
 <?xml version="1.0" ?>
 <robot name="prbt" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- parameter -->
-  <xacro:arg name="gripper" default=""/>
-  <xacro:property name="gripper" value="$(arg gripper)"/>
-  <xacro:arg name="prefix" default="prbt_"/>
-
   <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an
                      external frame of reference (considered fixed with respect to the robot)-->
-  <virtual_joint name="FixedBase" type="fixed" parent_frame="world" child_link="$(arg prefix)base_link" />
+  <virtual_joint name="FixedBase" type="fixed" parent_frame="world" child_link="table" />
 
   <!-- robot manipulator -->
   <xacro:include filename="$(find prbt_moveit_config)/config/prbt_manipulator.srdf.xacro" />
-  <xacro:prbt_manipulator prefix="$(arg prefix)"/>
+  <xacro:prbt_manipulator prefix="prbt_"/>
 
-  <!-- has gripper -->
-  <xacro:unless value="${not gripper}">
-    <xacro:include filename="$(find prbt_${gripper}_support)/config/${gripper}.srdf.xacro" />
-  </xacro:unless>
+  <!-- add gripper -->
+  <!-- <xacro:include filename="$(find prbt_pg70_support)/config/pg70.srdf.xacro" /> -->
 
+  <!-- you can add disabled collisions here -->
+  <!-- <disable_collisions link1="prbt_flange" link2="my_custom_gripper" reason="Adjacent" /> -->
 </robot>

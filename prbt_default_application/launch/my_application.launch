@@ -31,10 +31,6 @@ limitations under the License.
     <arg name="rviz_config" value="$(find prbt_moveit_config)/launch/moveit.rviz"/>
   </include>
 
-  <!-- The semantic description that corresponds to the URDF -->
-  <param name="robot_description_semantic" command="$(find xacro)/xacro --inorder
-               $(find prbt_default_application)/config/prbt.srdf.xacro" />
-
   <!-- Bringup the planner including environment collision checking -->
   <include file="$(find prbt_moveit_config)/launch/move_group.launch">
     <arg name="fake_execution" value="$(arg sim)"/>
@@ -43,6 +39,10 @@ limitations under the License.
     <!-- <arg name="capabilities" value="" /> --> <!-- additional capabilites (space seperated) -->
     <!-- <arg name="disable_capabilities" value="" /> --> <!-- inhibit capabilites (space seperated) -->
   </include>
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="robot_description_semantic" command="$(find xacro)/xacro --inorder
+               $(find prbt_default_application)/config/prbt.srdf.xacro" />
 
   <!-- Run the "real robot" interface nodes -->
   <!--   - this includes: robot_state, canopen, and sto nodes -->
