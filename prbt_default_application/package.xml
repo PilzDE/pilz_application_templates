@@ -13,5 +13,6 @@
   <buildtool_depend>catkin</buildtool_depend>
   
   <exec_depend>prbt_moveit_config</exec_depend>
+  <exec_depend>pilz_robot_programming</exec_depend>
 
 </package>
