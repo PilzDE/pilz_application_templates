@@ -20,6 +20,9 @@ limitations under the License.
 
   <!-- The "sim" argument controls whether we connect to a Simulated or Real robot -->
   <arg name="sim" default="true" />
+  
+  <!-- Control a supported gripper, e.g. 'pg70' -->
+  <arg name="gripper" default="" />
 
   <!-- Send urdf to parameter server -->
   <param name="robot_description"
@@ -36,19 +39,24 @@ limitations under the License.
     <arg name="fake_execution" value="$(arg sim)"/>
     <arg name="pipeline" value="pilz_command_planner" /><!-- Choose planning pipeline -->
     <arg name="load_robot_description" value="false" />
+    <arg name="gripper" value="$(arg gripper)" />
     <!-- <arg name="capabilities" value="" /> --> <!-- additional capabilites (space seperated) -->
     <!-- <arg name="disable_capabilities" value="" /> --> <!-- inhibit capabilites (space seperated) -->
   </include>
 
-  <!-- The semantic description that corresponds to the URDF -->
+  <!-- The semantic description that corresponds to the URDF.
+       Options: default srdf / custom file -->
   <param name="robot_description_semantic" command="$(find xacro)/xacro --inorder
-               $(find prbt_default_application)/config/prbt.srdf.xacro" />
+               $(find prbt_moveit_config)/config/prbt.srdf.xacro gripper:=$(arg gripper)" >
+  <!-- <param name="robot_description_semantic" command="$(find xacro)/xacro --inorder
+               $(find prbt_default_application)/config/prbt.srdf.xacro" /> -->
 
   <!-- Run the "real robot" interface nodes -->
   <!--   - this includes: robot_state, canopen, and sto nodes -->
   <group unless="$(arg sim)">
     <include file="$(find prbt_support)/launch/robot.launch">
       <arg name="load_robot_description" value="false" />
+      <arg name="gripper" value="$(arg gripper)" />
 
       <!-- Safe-torque-off-input from the safety controller is read to do brake robot before stop 1
            The signal is read via modbus and you can configure the modbus server ip -->
@@ -80,18 +88,13 @@ limitations under the License.
     </node>
   </group>
 
-  <!-- Load updated joint limits (override information from URDF) -->
-  <rosparam ns="robot_description_planning" command="load"
-            file="$(find prbt_moveit_config)/config/joint_limits.yaml"/>
+  <!-- Override joint limits (override information from URDF) -->
+  <!-- <rosparam ns="robot_description_planning" command="load"
+            file="$(find prbt_default_application)/config/joint_limits.yaml"/> -->
 
-  <!-- Load updated cartesian limits -->
-  <rosparam ns="robot_description_planning" command="load"
-            file="$(find prbt_moveit_config)/config/cartesian_limits.yaml"/>
-
-  <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
-  <rosparam ns="robot_description_kinematics" command="load"
-            file="$(find prbt_moveit_config)/config/kinematics.yaml"/>
-
+  <!-- Override cartesian limits -->
+  <!-- <rosparam ns="robot_description_planning" command="load"
+            file="$(find prbt_default_application)/config/cartesian_limits.yaml"/> -->
 
 </launch>
 
