@@ -21,7 +21,8 @@ limitations under the License.
   <!-- The "sim" argument controls whether we connect to a Simulated or Real robot -->
   <arg name="sim" default="true" />
   
-  <!-- Control a supported gripper, e.g. 'pg70' -->
+  <!-- Control a supported gripper, e.g. 'pg70'.
+       Note: Please include the gripper model into your application URDF yourself. -->
   <arg name="gripper" default="" />
 
   <!-- Send urdf to parameter server -->
@@ -36,10 +37,11 @@ limitations under the License.
 
   <!-- Bringup the planner including environment collision checking -->
   <include file="$(find prbt_moveit_config)/launch/move_group.launch">
-    <arg name="fake_execution" value="$(arg sim)"/>
-    <arg name="pipeline" value="pilz_command_planner" /><!-- Choose planning pipeline -->
+    <arg name="fake_execution" value="$(arg sim)"/> <!-- do not change -->
     <arg name="load_robot_description" value="false" />
     <arg name="gripper" value="$(arg gripper)" />
+
+    <arg name="pipeline" value="pilz_command_planner" /><!-- Choose planning pipeline -->
     <!-- <arg name="capabilities" value="" /> --> <!-- additional capabilites (space seperated) -->
     <!-- <arg name="disable_capabilities" value="" /> --> <!-- inhibit capabilites (space seperated) -->
   </include>
@@ -98,11 +100,11 @@ limitations under the License.
     </node>
   </group>
 
-  <!-- Override joint limits (override information from URDF) -->
+  <!-- Joint limits (override information from URDF) -->
   <!-- <rosparam ns="robot_description_planning" command="load"
             file="$(find prbt_default_application)/config/joint_limits.yaml"/> -->
 
-  <!-- Override cartesian limits -->
+  <!-- Cartesian limits (position and velocities) -->
   <!-- <rosparam ns="robot_description_planning" command="load"
             file="$(find prbt_default_application)/config/cartesian_limits.yaml"/> -->
 
