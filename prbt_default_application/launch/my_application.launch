@@ -27,17 +27,17 @@ limitations under the License.
 
   <!-- Send urdf to parameter server -->
   <param name="robot_description"
-         command="$(find xacro)/xacro --inorder '$(find prbt_default_application)/urdf/my_first_application.xacro'"/>
+         command="$(find xacro)/xacro --inorder '$(find prbt_default_application)/urdf/my_first_application.xacro'" />
 
   <!-- Start RViz visualization. Comment this on headless hardware, if you just want to run the driver -->
   <include file="$(find prbt_moveit_config)/launch/moveit_rviz.launch">
     <!-- put in your config file, once you saved it inside your package -->
-    <arg name="rviz_config" value="$(find prbt_moveit_config)/launch/moveit.rviz"/>
+    <arg name="rviz_config" value="$(find prbt_moveit_config)/launch/moveit.rviz" />
   </include>
 
   <!-- Bringup the planner including environment collision checking -->
   <include file="$(find prbt_moveit_config)/launch/move_group.launch">
-    <arg name="fake_execution" value="$(arg sim)"/> <!-- do not change -->
+    <arg name="fake_execution" value="$(arg sim)" /> <!-- do not change -->
     <arg name="load_robot_description" value="false" />
     <arg name="gripper" value="$(arg gripper)" />
 
@@ -49,8 +49,8 @@ limitations under the License.
   <!-- The semantic description that corresponds to the URDF.
        Options: default srdf / custom file -->
   <param name="robot_description_semantic" command="$(find xacro)/xacro --inorder
-               $(find prbt_moveit_config)/config/prbt.srdf.xacro gripper:=$(arg gripper)" >
-  <!-- <param name="robot_description_semantic" command="$(find xacro)/xacro --inorder
+               $(find prbt_moveit_config)/config/prbt.srdf.xacro gripper:=$(arg gripper)" />
+  <!-- <param name="robot_description_semantic" command="$(find xacro)/xacro - -inorder
                $(find prbt_default_application)/config/prbt.srdf.xacro" /> -->
 
   <!-- Run the "real robot" interface nodes -->
@@ -60,7 +60,7 @@ limitations under the License.
       <arg name="load_robot_description" value="false" />
       <arg name="gripper" value="$(arg gripper)" />
 
-      <!-- Safe-torque-off-input from the safety controller is read to do brake robot before stop 1
+      <!-- Safe-torque-off-input from the safety controller is read to brake the robot before power-off
            The signal is read via modbus and you can configure the modbus server ip -->
       <!-- <arg name="sto" value="pnoz" /> -->
       <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
