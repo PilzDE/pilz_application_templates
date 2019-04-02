@@ -64,16 +64,26 @@ limitations under the License.
       <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
 
       <!-- Set the name of the config file for canopen_motor_node. If you want to change settings, copy the yaml
-           file into your package and set canopen_config to your new config file path -->
-      <!-- <arg name="canopen_config" value="$(find pilz_tutorials)/config/manipulator_driver.yaml" /> -->
+           file into your package and set canopen_config to your new config file path.
+           See http://wiki.ros.org/canopen_chain_node for available configuration options. -->
+      <!-- <arg name="canopen_config" value="$(find prbt_default_application)/config/manipulator_driver.yaml" /> -->
 
       <!-- If you defined more controllers, add them to this list -->
       <!-- <arg name="spawn_controllers"
            value="manipulator_joint_trajectory_controller manipulator_joint_state_controller" /> -->
     </include>
+    <!-- Define additional controllers, see http://wiki.ros.org/joint_trajectory_controller?distro=melodic#Controller_configuration_examples -->
+    <!-- <rosparam ns="prbt" command="load"
+                   file="$(find prbt_default_application)/config/my_controller.yaml" /> -->
+
     <!-- To override a single parameter (e.g. name of can device), or define your own controllers,
          use rosparam override:-->
     <!-- <rosparam param="/prbt/driver/bus/device">can2</rosparam> -->
+
+    <!-- Homing of pg70-gripper: Enable referencing procedure during init -->
+    <!-- <rosparam param="/prbt/driver/nodes/prbt_gripper_finger_left_joint/dcf_overlay">
+      {"6502" : "99", "6098" : "34"}
+    </rosparam> -->
   </group>
 
   <!-- Run the robot simulator and action interface nodes -->
