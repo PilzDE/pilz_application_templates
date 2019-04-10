@@ -3,9 +3,9 @@ Templates and example applications for the PRBT manipulator.
 
 ## `prbt_default_application` package
 
-Copy the launch file into your application package. If you want more
-configuration options, download this repository and use the files as
-template.
+Copy the launch file into your application package. If you want to use
+all configuration options, download this repository and use the files
+as template.
 
 Please see the [tutorials](https://wiki.ros.org/pilz_robots/Tutorials/) 
 for explanation of the directory structure and the links inside the
