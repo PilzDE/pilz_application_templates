@@ -9,9 +9,10 @@
   <xacro:include filename="$(find prbt_moveit_config)/config/prbt_manipulator.srdf.xacro" />
   <xacro:prbt_manipulator prefix="prbt_"/>
 
-  <!-- add gripper -->
-  <!-- <xacro:include filename="$(find prbt_pg70_support)/config/pg70.srdf.xacro" /> -->
+  <!-- gripper disabled collisions -->
+  <!-- <xacro:arg name="prefix" default="prbt_" />
+  <xacro:include filename="$(find prbt_pg70_support)/config/pg70.srdf.xacro" /> -->
 
-  <!-- you can add disabled collisions here -->
+  <!-- add other disabled collisions here -->
   <!-- <disable_collisions link1="prbt_flange" link2="my_custom_gripper" reason="Adjacent" /> -->
 </robot>
