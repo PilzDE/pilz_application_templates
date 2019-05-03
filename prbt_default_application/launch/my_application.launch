@@ -105,5 +105,8 @@ limitations under the License.
   <!-- <rosparam ns="robot_description_planning" command="load"
             file="$(find prbt_default_application)/config/cartesian_limits.yaml"/> -->
 
+  <!-- startup application script with state-machine-based or similar procedural control -->
+  <!-- <node name="my_application" pkg="prbt_default_application" type="myFirstApplication.py" /> -->
+
 </launch>
 
