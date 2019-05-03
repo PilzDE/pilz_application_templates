@@ -23,7 +23,7 @@ limitations under the License.
   
   <!-- Control a supported gripper, e.g. 'pg70'.
        Note: Please include the gripper model into your application URDF yourself. -->
-  <arg name="gripper" default="" />
+  <arg name="gripper" value="" />
 
   <!-- Send urdf to parameter server -->
   <param name="robot_description"
@@ -47,7 +47,7 @@ limitations under the License.
   </include>
 
   <!-- The semantic description that corresponds to the URDF. -->
-  <!-- <param name="robot_description_semantic" command="$(find xacro)/xacro - -inorder
+  <!-- <param name="robot_description_semantic" command="$(find xacro)/xacro -&#45;inorder
                $(find prbt_default_application)/config/prbt.srdf.xacro" /> -->
 
   <!-- Run the "real robot" interface nodes -->
