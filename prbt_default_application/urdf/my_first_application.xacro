@@ -59,10 +59,12 @@
   </joint>
 
   <!-- add PG70 gripper with cuboid brackets of configurable size -->
-  <!-- <xacro:arg name="robot_prefix" default="prbt_"/>
+  <!--
   <xacro:include filename="$(find prbt_pg70_support)/urdf/pg70.urdf.xacro" />
+  <xacro:prbt_gripper gripper_name="prbt_gripper" parent="prbt_flange" />
 
   <xacro:include filename="$(find prbt_support)/urdf/simple_gripper_brackets.urdf.xacro" />
-  <xacro:simple_gripper_brackets gripper_name="$(arg robot_prefix)gripper" size_y="0.003" /> -->
+  <xacro:simple_gripper_brackets gripper_name="prbt_gripper" size_y="0.003" />
+  -->
 
 </robot>
