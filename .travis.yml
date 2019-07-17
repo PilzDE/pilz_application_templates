@@ -1,0 +1,33 @@
+sudo: required
+language: generic
+
+cache:
+  directories:
+    - $HOME/.ccache
+
+notifications:
+  email:
+    on_failure: always
+    recipients:
+      - a.gutenkunst@pilz.de
+      - c.henkel@pilz.de
+      - h.slusarek@pilz.de
+      - i.martini@pilz.de
+
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      env: ROS_DISTRO="kinetic"
+    - os: linux
+      dist: bionic
+      env: ROS_DISTRO="melodic"
+
+before_install:
+  - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+  - sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+  - sudo apt update
+install:
+  - sudo apt-get install $(awk '{print $1'} versions.list)
+script:
+  - ls -Al
