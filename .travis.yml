@@ -1,5 +1,10 @@
 sudo: required
-language: generic
+language: python
+python:
+  - "2.7"
+cache: pip
+services:
+  - docker
 
 notifications:
   email:
@@ -24,9 +29,11 @@ before_install:
   - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
   - sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
   - sudo apt update
+  - sudo apt install python-pip
+  - sudo pip install catkin-lint
 install:
   - sudo apt-get install $(awk '{print $1'} versions.list)
 script:
   - source /opt/ros/$ROS_DISTRO/setup.bash
   - export ROS_PACKAGE_PATH=$(pwd):$ROS_PACKAGE_PATH
-  - roslaunch prbt_default_application my_application.launch
+  - catkin_lint -W2 --strict prbt_default_application
