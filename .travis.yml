@@ -30,7 +30,7 @@ before_install:
   - sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
   - sudo apt update
   - sudo apt install python-pip ros-${ROS_DISTRO}-rosbash ros-${ROS_DISTRO}-roslaunch
-  - sudo pip install catkin-lint
+  - sudo pip install catkin-lint rospkg
 install:
   - sudo apt-get install $(awk '{print $1'} versions_${ROS_DISTRO}.list)
 script:
