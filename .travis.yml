@@ -35,6 +35,7 @@ install:
   - sudo apt-get install $(awk '{print $1'} versions_${ROS_DISTRO}.list)
 script:
   - source /opt/ros/$ROS_DISTRO/setup.bash
+  - export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages
   - export ROS_PACKAGE_PATH=$(pwd):$ROS_PACKAGE_PATH
   - catkin_lint -W2 --strict prbt_default_application
   - rosrun roslaunch roslaunch-check prbt_default_application/launch
