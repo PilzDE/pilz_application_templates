@@ -32,7 +32,7 @@ before_install:
   - sudo apt install python-pip
   - sudo pip install catkin-lint
 install:
-  - sudo apt-get install $(awk '{print $1'} versions.list)
+  - sudo apt-get install $(awk '{print $1'} versions_${ROS_DISTRO}.list)
 script:
   - source /opt/ros/$ROS_DISTRO/setup.bash
   - export ROS_PACKAGE_PATH=$(pwd):$ROS_PACKAGE_PATH
