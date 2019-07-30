@@ -59,7 +59,7 @@ limitations under the License.
 
       <!-- Safe-torque-off-input from the safety controller is read to brake the robot before power-off
            The signal is read via modbus and you can configure the modbus server ip -->
-      <!-- <arg name="sto" value="pnoz" /> -->
+      <!-- <arg name="sto" value="pss4000" /> -->
       <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
 
       <!-- You can additionally select the two safety functions below: -->
