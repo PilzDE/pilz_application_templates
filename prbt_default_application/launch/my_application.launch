@@ -20,7 +20,7 @@ limitations under the License.
 
   <!-- The "sim" argument controls whether we connect to a Simulated or Real robot -->
   <arg name="sim" default="true" />
-  
+
   <!-- Control a supported gripper, e.g. 'pg70'.
        Note: Please include the gripper model into your application URDF yourself. -->
   <arg name="gripper" value="" />
@@ -59,8 +59,14 @@ limitations under the License.
 
       <!-- Safe-torque-off-input from the safety controller is read to brake the robot before power-off
            The signal is read via modbus and you can configure the modbus server ip -->
-      <!-- <arg name="sto" value="pnoz" /> -->
+      <!-- <arg name="sto" value="pss4000" /> -->
       <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
+
+      <!-- You can additionally select the two safety functions below: -->
+      <!-- Set braketest usage -->
+      <arg name="has_braketest_support" default="true"/>
+      <!-- Set operation mode support -->
+      <arg name="has_operation_mode_support" default="true"/>
 
       <!-- Set the name of the config file for canopen_motor_node. If you want to change settings, copy the yaml
            file into your package and set canopen_config to your new config file path.
@@ -109,4 +115,3 @@ limitations under the License.
   <!-- <node name="my_application" pkg="prbt_default_application" type="myFirstApplication.py" /> -->
 
 </launch>
-
