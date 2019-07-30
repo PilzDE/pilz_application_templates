@@ -27,7 +27,7 @@ limitations under the License.
 
   <!-- Send urdf to parameter server -->
   <param name="robot_description"
-         command="$(find xacro)/xacro --inorder '$(find prbt_default_application)/urdf/my_application.xacro'" />
+         command="$(find xacro)/xacro --inorder '$(find prbt_default_application)/urdf/my_first_application.xacro'" />
 
   <!-- Start RViz visualization. Comment this on headless hardware, if you just want to run the driver -->
   <include file="$(find prbt_moveit_config)/launch/moveit_rviz.launch">
@@ -106,7 +106,7 @@ limitations under the License.
             file="$(find prbt_default_application)/config/cartesian_limits.yaml"/> -->
 
   <!-- startup application script with state-machine-based or similar procedural control -->
-  <!-- <node name="my_application" pkg="prbt_default_application" type="myApplication.py" /> -->
+  <!-- <node name="my_application" pkg="prbt_default_application" type="myFirstApplication.py" /> -->
 
 </launch>
 
