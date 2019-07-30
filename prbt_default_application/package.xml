@@ -4,7 +4,10 @@
   <version>0.1.0</version>
   <description>Startup a PRBT manipulator module from ROS and move it.</description>
 
-  <maintainer email="ros@pilz.de">Pilz GmbH and Co. KG</maintainer>
+  <maintainer email="a.gutenkunst@pilz.de">Alexander Gutenkunst</maintainer>
+  <maintainer email="c.henkel@pilz.de">Christian Henkel</maintainer>
+  <maintainer email="h.slusarek@pilz.de">Hagen Slusarek</maintainer>
+  <maintainer email="i.martini@pilz.de">Immanuel Martini</maintainer>
 
   <license>Apache 2.0</license>
 
@@ -16,5 +19,4 @@
   <exec_depend>prbt_moveit_config</exec_depend>
   <exec_depend>pilz_robot_programming</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
-
 </package>
