@@ -64,7 +64,7 @@ limitations under the License.
 
       <!-- You can additionally select the two safety functions below: -->
       <!-- Set braketest usage -->
-      <arg name="has_braketest_support" default="true"/>
+      <arg name="has_braketest_support" value="true"/>
       <!-- Set operation mode support -->
       <arg name="has_operation_mode_support" default="true"/>
 
