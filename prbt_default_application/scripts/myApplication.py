@@ -23,7 +23,8 @@ def start_program():
     r.move(Ptp(goal=start_pos, vel_scale=__ROBOT_VELOCITY__))
 
     rospy.loginfo("Start loop") # log
-    for _ in range(5):
+    while not rospy.is_shutdown():
+        # do infinite loop
         # 5 times
 
         # pick the PNOZ
