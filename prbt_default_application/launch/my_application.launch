@@ -57,18 +57,6 @@ limitations under the License.
       <arg name="load_robot_description" value="false" />
       <arg name="gripper" value="$(arg gripper)" />
 
-      <!-- Safe-torque-off-input from the safety controller is read to brake the robot before power-off
-           The signal is read via modbus and you can configure the modbus server ip -->
-      <!-- <arg name="sto" value="pss4000" /> -->
-      <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
-
-      <!-- The following two safety functions can only be used if a safety controller is connected via modbus
-           (see above). They are mandatory for a certifiable system according to DIN EN ISO 10218-1 (work in progress). -->
-      <!-- Set braketest usage -->
-      <!-- <arg name="has_braketest_support" value="true"/> -->
-      <!-- Set operation mode support -->
-      <!-- <arg name="has_operation_mode_support" value="true"/> -->
-
       <!-- Set the name of the config file for canopen_motor_node. If you want to change settings, copy the yaml
            file into your package and set canopen_config to your new config file path.
            See http://wiki.ros.org/canopen_chain_node for available configuration options. -->
@@ -77,6 +65,19 @@ limitations under the License.
       <!-- If you defined more controllers, add them to this list -->
       <!-- <arg name="spawn_controllers"
            value="manipulator_joint_trajectory_controller manipulator_joint_state_controller" /> -->
+
+      <!-- The following options in this group require a safety controller connected via modbus.
+           They are mandatory for a system certifiable according to EN ISO 10218-1
+           This feature is still work in progress.
+      <!-- configure the modbus server ip of the safety controller -->
+      <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
+      <!-- ?? register mapping only for STO ??  -->
+      <!-- <arg name="sto" value="pss4000" /> -->
+
+      <!-- enable braketest feature to check for wear of brakes every few hours -->
+      <!-- <arg name="has_braketest_support" value="true"/> -->
+      <!-- enable operation mode feature to e.g. reduce speed in manual mode -->
+      <!-- <arg name="has_operation_mode_support" value="true"/> -->
     </include>
     <!-- Define additional controllers, see http://wiki.ros.org/joint_trajectory_controller?distro=melodic#Controller_configuration_examples -->
     <!-- <rosparam ns="prbt" command="load"
