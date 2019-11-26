@@ -15,6 +15,10 @@ It should not be necessary, to change the original launch files
 `robot.launch` or `move_group.launch` and thus fork pilz_robots.
 If there are any options missing, please file an Issue.
 
+### Versions
+`pilz_templates` work both with *ROS melodic* and *ROS kinetic*.
+There is a single `master` branch for both releases.
+
 ### Changelog
 Changes are listed in [Changelog](prbt_default_application/CHANGELOG.rst).
 If options changed in a recent version, please update your working copies
