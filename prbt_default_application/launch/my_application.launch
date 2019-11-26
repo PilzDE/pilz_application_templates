@@ -62,7 +62,8 @@ limitations under the License.
       <!-- <arg name="sto" value="pss4000" /> -->
       <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
 
-      <!-- You can additionally select the two safety functions below: -->
+      <!-- The following two safety functions can only be used if a safety controller is connected via modbus
+           (see above). They are mandatory for a certifiable system according to DIN EN ISO 10218-1 (work in progress). -->
       <!-- Set braketest usage -->
       <!-- <arg name="has_braketest_support" value="true"/> -->
       <!-- Set operation mode support -->
