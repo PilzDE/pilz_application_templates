@@ -95,6 +95,10 @@ limitations under the License.
       <param name="/use_gui" value="false"/>
       <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
     </node>
+
+    <!-- We assume that no safety controller is connected, so we need to fake the corresponding interface -->
+    <!--  - this includes: speed override -->
+    <include file="$(find prbt_hardware_support)/launch/fake_safety_interface.launch" />
   </group>
 
   <!-- Joint limits (override information from URDF) -->
