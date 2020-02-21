@@ -27,7 +27,7 @@ limitations under the License.
 
   <!-- Send urdf to parameter server -->
   <param name="robot_description"
-         command="$(find xacro)/xacro --inorder '$(find prbt_default_application)/urdf/my_first_application.xacro'" />
+         command="$(find xacro)/xacro --inorder '$(find prbt_default_application)/urdf/my_application.xacro'" />
 
   <!-- Start RViz visualization. Comment this on headless hardware, if you just want to run the driver -->
   <include file="$(find prbt_moveit_config)/launch/moveit_rviz.launch">
@@ -95,6 +95,10 @@ limitations under the License.
       <param name="/use_gui" value="false"/>
       <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
     </node>
+
+    <!-- We assume that no safety controller is connected, so we need to fake the corresponding interface -->
+    <!--  - this includes: speed override -->
+    <include file="$(find prbt_hardware_support)/launch/fake_safety_interface.launch" />
   </group>
 
   <!-- Joint limits (override information from URDF) -->
@@ -106,7 +110,7 @@ limitations under the License.
             file="$(find prbt_default_application)/config/cartesian_limits.yaml"/> -->
 
   <!-- startup application script with state-machine-based or similar procedural control -->
-  <!-- <node name="my_application" pkg="prbt_default_application" type="myFirstApplication.py" /> -->
+  <!-- <node name="my_application" pkg="prbt_default_application" type="myApplication.py" /> -->
 
 </launch>
 
