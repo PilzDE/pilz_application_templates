@@ -60,7 +60,7 @@ limitations under the License.
       <!-- By default, the safety HW is configured to be PSS4000. If you want to used PNOZ or a different modbus
            server IP, set them below:
       <!-- <arg name="safety_hw" value="pnoz" /> -->
-      <!-- <arg name="safety_hw_modbus_server_ip" value="192.168.0.10" /> -->
+      <!-- <arg name="modbus_server_ip" value="192.168.0.10" /> -->
 
       <!-- Set the name of the config file for canopen_motor_node. If you want to change settings, copy the yaml
            file into your package and set canopen_config to your new config file path.
