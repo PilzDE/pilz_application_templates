@@ -62,8 +62,8 @@ limitations under the License.
       <!-- <arg name="sto" value="pnoz" /> -->
       <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
         
-      <!-- <arg name="read_api_spec_file" default="$(find prbt_default_application)/config/modbus_read_api_spec.yaml" /> -->
-      <!-- <arg name="write_api_spec_file" default="$(find prbt_default_application)/config/modbus_write_api_spec.yaml" /> -->
+      <!-- <arg name="read_api_spec_file" value="$(find prbt_default_application)/config/modbus_read_api_spec.yaml" /> -->
+      <!-- <arg name="write_api_spec_file" value="$(find prbt_default_application)/config/modbus_write_api_spec.yaml" /> -->
 
       <!-- Set the name of the config file for canopen_motor_node. If you want to change settings, copy the yaml
            file into your package and set canopen_config to your new config file path.
