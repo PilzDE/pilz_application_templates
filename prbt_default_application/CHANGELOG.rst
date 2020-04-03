@@ -6,6 +6,11 @@ This file lists the changes that you have to trace, once you created an own appl
 and update its dependencies. Date and upstream versions are given for reference, you can check for your local
 version using ``dpkg -l | grep "prbt-\|pilz-"``.
 
+Forthcoming
+-----------
+* revision of launchfile
+* rename of sto to run_permitted
+
 2020-02-17
 ----------
 * compatible with pilz_robots version melodic-0.5.12
