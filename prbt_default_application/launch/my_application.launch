@@ -62,7 +62,7 @@ limitations under the License.
       <!-- <arg name="safety_hw" value="pnoz" /> -->
       <!-- <arg name="modbus_server_ip" value="192.168.0.10" /> -->
       <!-- When changing the safety controller, you will have to change the configuration below, according to
-           https://github.com/PilzDE/pilz_robots/blob/melodic-devel/prbt_hardware_support/README.md -->
+           https://github.com/PilzDE/pilz_robots/blob/melodic-devel/prbt_hardware_support/README.md#how-to-activate-and-deactivate-hardware-features -->
 
       <!-- You can select to switch of these features, that are enabled by default. -->
       <!-- <arg name="has_braketest_support" default="false"/> -->
