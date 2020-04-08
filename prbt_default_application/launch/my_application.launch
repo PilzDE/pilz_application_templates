@@ -57,10 +57,15 @@ limitations under the License.
       <arg name="load_robot_description" value="false" />
       <arg name="gripper" value="$(arg gripper)" />
 
-      <!-- Safe-torque-off-input from the safety controller is read to brake the robot before power-off
-           The signal is read via modbus and you can configure the modbus server ip -->
-      <!-- <arg name="sto" value="pnoz" /> -->
-      <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
+      <!-- By default, the safety HW is configured to be PSS4000. If you want to used PNOZ or a different modbus
+           server IP, set them below: -->
+      <!-- <arg name="safety_hw" value="pnoz" /> -->
+      <!-- <arg name="modbus_server_ip" value="192.168.0.10" /> -->
+
+      <!-- Addtioninally you can select to switch of these features, that are enabled by default -->
+      <!-- <arg name="has_braketest_support" default="false"/> -->
+      <!-- <arg name="has_operation_mode_support" default="false"/> -->
+      <!-- <arg name="visual_status_indicator" default="false"/> -->
 
       <!-- Set the name of the config file for canopen_motor_node. If you want to change settings, copy the yaml
            file into your package and set canopen_config to your new config file path.
