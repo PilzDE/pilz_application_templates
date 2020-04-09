@@ -8,8 +8,8 @@ version using ``dpkg -l | grep "prbt-\|pilz-"``.
 
 Forthcoming
 -----------
-* revision of launchfile
-* rename of sto to run_permitted
+* update launchfile to new version in prbt_support: rename ``sto`` to ``safety_hw`` and ``sto_modbus_server_ip`` to ``modbus_server_ip``
+* add options to disable operation mode and braketest features
 
 2020-02-17
 ----------
