@@ -51,7 +51,7 @@ limitations under the License.
                $(find prbt_default_application)/config/prbt.srdf.xacro" /> -->
 
   <!-- Run the "real robot" interface nodes -->
-  <!--   - this includes: robot_state, canopen, and sto nodes -->
+  <!--   - this includes: robot_state, canopen, and robot safety nodes -->
   <group unless="$(arg sim)">
     <include file="$(find prbt_support)/launch/robot.launch">
       <arg name="load_robot_description" value="false" />
