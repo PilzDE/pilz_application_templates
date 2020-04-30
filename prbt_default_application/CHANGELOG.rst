@@ -8,8 +8,10 @@ version using ``dpkg -l | grep "prbt-\|pilz-"``.
 
 Forthcoming
 -----------
+* add launchfile argument ``iso10218_support``
 * update launchfile to new version in prbt_support: rename ``sto`` to ``safety_hw`` and ``sto_modbus_server_ip`` to ``modbus_server_ip``
 * add options to disable operation mode and braketest features
+* Contributors: Pilz GmbH and Co. KG
 
 2020-02-17
 ----------
