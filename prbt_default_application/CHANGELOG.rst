@@ -6,8 +6,9 @@ This file lists the changes that you have to trace, once you created an own appl
 and update its dependencies. Date and upstream versions are given for reference, you can check for your local
 version using ``dpkg -l | grep "prbt-\|pilz-"``.
 
-Forthcoming
+2020-05-03
 -----------
+* compatible with pilz_robots version melodic-0.5.15
 * add launchfile argument ``iso10218_support``
 * update launchfile to new version in prbt_support: rename ``sto`` to ``safety_hw`` and ``sto_modbus_server_ip`` to ``modbus_server_ip``
 * add options to disable operation mode and braketest features
