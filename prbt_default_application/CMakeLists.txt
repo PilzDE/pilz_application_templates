@@ -9,8 +9,6 @@ catkin_package(
 
 )
 
-catkin_python_setup()
-
 # install executable python script
 catkin_install_python(PROGRAMS scripts/myApplication.py
 	DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
