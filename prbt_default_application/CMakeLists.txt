@@ -5,11 +5,11 @@ find_package(catkin REQUIRED COMPONENTS
   # nothing
 )
 
+catkin_python_setup()
+
 catkin_package(
 
 )
-
-catkin_python_setup()
 
 # install executable python script
 catkin_install_python(PROGRAMS scripts/myApplication.py
