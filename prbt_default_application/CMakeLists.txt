@@ -5,6 +5,8 @@ find_package(catkin REQUIRED COMPONENTS
   # nothing
 )
 
+catkin_python_setup()
+
 catkin_package(
 
 )
