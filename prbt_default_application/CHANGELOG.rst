@@ -6,6 +6,12 @@ This file lists the changes that you have to trace, once you created an own appl
 and update its dependencies. Date and upstream versions are given for reference, you can check for your local
 version using ``dpkg -l | grep "prbt-\|pilz-"``.
 
+Forthcoming
+-----------
+* compatible with pilz_robots version melodic-0.5.??
+* changing references from pilz_command_planner to pilz_industrial_motion_planner
+* Contributors: Pilz GmbH and Co. KG
+
 2020-05-03
 -----------
 * compatible with pilz_robots version melodic-0.5.15
