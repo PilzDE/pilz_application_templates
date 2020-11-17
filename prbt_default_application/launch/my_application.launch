@@ -51,16 +51,26 @@ limitations under the License.
                $(find prbt_default_application)/config/prbt.srdf.xacro" /> -->
 
   <!-- Run the "real robot" interface nodes -->
-  <!--   - this includes: robot_state, canopen, and sto nodes -->
+  <!--   - this includes: robot_state, canopen, and robot safety nodes -->
   <group unless="$(arg sim)">
     <include file="$(find prbt_support)/launch/robot.launch">
       <arg name="load_robot_description" value="false" />
       <arg name="gripper" value="$(arg gripper)" />
 
-      <!-- Safe-torque-off-input from the safety controller is read to brake the robot before power-off
-           The signal is read via modbus and you can configure the modbus server ip -->
-      <!-- <arg name="sto" value="pnoz" /> -->
-      <!-- <arg name="sto_modbus_server_ip" value="192.168.0.10" /> -->
+      <!-- By default, the safety HW is configured to be PSS4000. If you want to used PNOZ or a different modbus
+           server IP, set them below: -->
+      <!-- <arg name="safety_hw" value="pnoz" /> -->
+      <!-- <arg name="modbus_server_ip" value="192.168.0.10" /> -->
+      <!-- When changing the safety controller, you will have to change the configuration below, according to
+           https://github.com/PilzDE/pilz_robots/blob/melodic-devel/prbt_hardware_support/README.md#how-to-activate-and-deactivate-hardware-features -->
+
+      <!-- You can select to switch off the following features, that are enabled by default. -->
+      <!-- <arg name="has_braketest_support" default="false"/> -->
+      <!-- <arg name="has_operation_mode_support" default="false"/> -->
+      <!-- <arg name="visual_status_indicator" default="false"/> -->
+
+      <!-- For debugging purposes you can start without the Modbus connection. Keep in mind that this disables all safety features! -->
+      <!-- <arg name="iso10218_support" value="false"/> -->
 
       <!-- Set the name of the config file for canopen_motor_node. If you want to change settings, copy the yaml
            file into your package and set canopen_config to your new config file path.
@@ -113,4 +123,3 @@ limitations under the License.
   <!-- <node name="my_application" pkg="prbt_default_application" type="myApplication.py" /> -->
 
 </launch>
-

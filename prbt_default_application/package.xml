@@ -12,7 +12,12 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   
-  <exec_depend>prbt_moveit_config</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>pilz_robot_programming</exec_depend>
+  <exec_depend>prbt_hardware_support</exec_depend>
+  <exec_depend>prbt_moveit_config</exec_depend>
+  <exec_depend>prbt_support</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
 </package>
