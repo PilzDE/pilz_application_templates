@@ -8,7 +8,7 @@ version using ``dpkg -l | grep "prbt-\|pilz-"``.
 
 Forthcoming
 -----------
-* compatible with pilz_robots version melodic-0.5.22 and noetic-0.6.0
+* compatible with pilz_robots version 0.5.22 (melodic) or 0.6.0 (noetic) and pilz_industrial_motion version 0.4.13 (melodic) or 0.5.0 (noetic)
 * changing references from pilz_command_planner to pilz_industrial_motion_planner
 * Contributors: Pilz GmbH and Co. KG
 
