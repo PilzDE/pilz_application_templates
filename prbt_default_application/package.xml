@@ -3,17 +3,18 @@
   <name>prbt_default_application</name>
   <version>0.1.0</version>
   <description>Startup a PRBT manipulator module from ROS and move it.</description>
-  
+
   <maintainer email="ros@pilz.de">Pilz GmbH and Co. KG</maintainer>
 
   <license>Apache 2.0</license>
 
-  <url type="website">https://wiki.ros.org/pilz_robots</url> 
+  <url type="website">https://wiki.ros.org/pilz_robots</url>
 
   <buildtool_depend>catkin</buildtool_depend>
-  
+
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>pilz_robot_programming</exec_depend>
+  <exec_depend>pilz_industrial_motion_planner</exec_depend>
   <exec_depend>prbt_hardware_support</exec_depend>
   <exec_depend>prbt_moveit_config</exec_depend>
   <exec_depend>prbt_support</exec_depend>

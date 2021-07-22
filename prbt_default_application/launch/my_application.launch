@@ -20,7 +20,7 @@ limitations under the License.
 
   <!-- The "sim" argument controls whether we connect to a Simulated or Real robot -->
   <arg name="sim" default="true" />
-  
+
   <!-- Control a supported gripper, e.g. 'pg70'.
        Note: Please include the gripper model into your application URDF yourself. -->
   <arg name="gripper" value="" />
@@ -41,7 +41,7 @@ limitations under the License.
     <arg name="load_robot_description" value="false" />
     <arg name="gripper" value="$(arg gripper)" />
 
-    <arg name="pipeline" value="pilz_command_planner" /><!-- Choose planning pipeline -->
+    <arg name="pipeline" value="pilz_industrial_motion_planner" /><!-- Choose planning pipeline -->
     <!-- <arg name="capabilities" value="" /> --> <!-- additional capabilites (space seperated) -->
     <!-- <arg name="disable_capabilities" value="" /> --> <!-- inhibit capabilites (space seperated) -->
   </include>
